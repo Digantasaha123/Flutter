@@ -11,6 +11,7 @@ class Module8class1 extends StatelessWidget {
     TextEditingController nameController = TextEditingController();
     TextEditingController phoneController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
@@ -78,32 +79,70 @@ class Module8class1 extends StatelessWidget {
               ),
             ),
           ),
+
+          Card(
+            child: SizedBox(
+              height: 40,
+              width: 200,
+              child: ElevatedButton(
+                onPressed: () {
+                  if (phoneController.text.isEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("Enter Your Phone Number")),
+                    );
+
+                    // print("Enter Your Phone Number");
+                  } else if (phoneController.text.length != 11) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("Enter  valid Phone Number")),
+                    );
+                    print("Length must be at least 11");
+                  }
+                  if (nameController.text.isEmpty) {
+                    print("Enter Your  name");
+                  }
+                  if (passwordController.text.isEmpty) {
+                    print("Enter Password");
+                  }
+                },
+                child: Text("Submit"),
+              ),
+            ),
+          ),
+          SizedBox(height: 20),
           SizedBox(
             height: 40,
             width: 200,
             child: ElevatedButton(
               onPressed: () {
-                if (phoneController.text.isEmpty) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text("Enter Your Phone Number")),
-                  );
-
-                  // print("Enter Your Phone Number");
-                } else if (phoneController.text.length != 11) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text("Enter  valid Phone Number")),
-                  );
-                  print("Length must be at least 11");
-                }
-                if (nameController.text.isEmpty) {
-                  print("Enter Your  name");
-                }
-                if (passwordController.text.isEmpty) {
-                  print("Enter Password");
-                }
+                passwordController.clear();
+                phoneController.clear();
+                nameController.clear();
               },
-              child: Text("Submit"),
+
+              child: Text("Clear"),
             ),
+          ),
+          SizedBox(height: 20),
+          Container(
+            height: 50,
+            width: 220,
+            alignment: Alignment.center,
+            // color: Colors.green[500],
+            decoration: BoxDecoration(
+              color: Colors.green[400],
+              borderRadius: BorderRadius.circular(15),
+              border: Border.all(width: 2, color: Colors.black38),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  offset: Offset(10, 10),
+                  blurRadius: 10,
+                  spreadRadius: 0,
+                ),
+              ],
+            ),
+            child: Text("Container Example"),
           ),
         ],
       ),
