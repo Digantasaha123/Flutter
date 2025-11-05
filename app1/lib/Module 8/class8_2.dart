@@ -42,7 +42,13 @@ class Module8class2 extends StatelessWidget {
           ),
         SizedBox( height: 10),
         TextFormField(
-          decoration: InputDecoration(),
+          obscureText: true,
+          decoration: InputDecoration(
+            hintText: "Password",
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10)
+            )
+          ),
         )
         ],
       ),
