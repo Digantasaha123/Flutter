@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
       scrollDirection: Axis.vertical ,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAnnlignment.center,
           children: [
             Text(
               "Home",
