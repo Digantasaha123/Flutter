@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-
+import 'package:app1/Module 8/class8_2.dart';
+import 'package:app1/Module 8/flutter_class_3.dart';
+import 'package:app1/Module_9/own_widget.dart';
+// import 'package:app1/Module 8/home.dart';
+import 'alert.dart';
 class Navigation extends StatelessWidget {
   const Navigation({super.key});
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -15,6 +19,7 @@ class Navigation extends StatelessWidget {
              Tab(text: "home", icon: Icon(Icons.home),),
              Tab(text: "phone", icon: Icon(Icons.phone),),
              Tab(text: "favourites", icon: Icon(Icons.star_border_sharp),),
+              Tab(text: "Own WIdget", icon: Icon(Icons.person_off_outlined),),
             ],
           ),
           backgroundColor: Colors.blue,
@@ -23,38 +28,42 @@ class Navigation extends StatelessWidget {
         ),
       body: TabBarView(
         children: [
-          Container(
-            height: 200,
-            color: const Color.fromARGB(255, 41, 195, 164),
-            child: Center(
-              child: Text("Home",
-              style: TextStyle(
-                fontSize: 20,
+          // Container(
+          //   height: 200,
+          //   color: const Color.fromARGB(255, 41, 195, 164),
+          //   child: Center(
+          //     child: Text("Home",
+          //     style: TextStyle(
+          //       fontSize: 20,
                 
-              ),),
-            ),
-          ),Container(
-            height: 200,
-            color: Colors.lightBlueAccent,
-            child: Center(
-              child: Text("Phone",
-              style: TextStyle(
-                fontSize: 20,
+          //     ),),
+          //   ),
+          // ),Container(
+          //   height: 200,
+          //   color: Colors.lightBlueAccent,
+          //   child: Center(
+          //     child: Text("Phone",
+          //     style: TextStyle(
+          //       fontSize: 20,
                 
-              ),),
-            ),
-          ),Container(
-            height: 200,
-            color: const Color.fromARGB(221, 209, 113, 113),
-            child: Center(
-              child: Text("Favourites",
-              style: TextStyle(
-                fontSize: 20,
+          //     ),),
+          //   ),
+          // ),Container(
+          //   height: 200,
+          //   color: const Color.fromARGB(221, 209, 113, 113),
+          //   child: Center(
+          //     child: Text("Favourites",
+          //     style: TextStyle(
+          //       fontSize: 20,
                 
-              ),),
-            ),
-          ),
-          
+          //     ),),
+          //   ),
+          // ),
+          Module8class2(),
+          FlutterClass3(),
+          Alert(),
+          OwnWidget(),
+
         ],
       ),
         drawer: Drawer(
