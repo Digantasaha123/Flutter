@@ -10,12 +10,7 @@ class class3 extends StatelessWidget {
       appBar: AppBar(title: Text("Advance Navigation Techniques")),
       body: Column(
         children: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/stack');
-            },
-            child: Text("Stack"),
-          ),
+          ElevatedButton(onPressed: () {}, child: Text("Stack")),
 
           ElevatedButton(
             onPressed: () {
@@ -49,7 +44,7 @@ class class3 extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, '/class3');
             },
-            child: Text("Class 3"),
+            child: Text("Class 3 with pushnamed and custom animation"),
           ),
           ElevatedButton(
             onPressed: () {
@@ -59,12 +54,13 @@ class class3 extends StatelessWidget {
                   pageBuilder:
                       (context, animation, secondaryAnimation) => Navigation(),
                   transitionsBuilder: (
-                    Context,
+                    context,
                     animation,
                     secondaryAnimation,
                     child,
                   ) {
-                    const begin = Offset(1.0, 0);
+                    // const begin = Offset(1.0, 0);
+                    const begin = Offset(1.0, 2.0);
                     const end = Offset.zero;
                     const curve = Curves.ease;
 
@@ -81,6 +77,15 @@ class class3 extends StatelessWidget {
               );
             },
             child: Text('Class3 2'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => Navigation()),
+              );
+            },
+            child: Text("Elevated button with push Replacement"),
           ),
         ],
       ),
